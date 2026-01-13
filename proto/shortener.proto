@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+// Protobuf package name (distinct from Go package)  
+package shortener.v1;
+
+option go_package = "github.com/Brady-MacDonald/grpc/proto/shortenerv1;shortenerv1";
+
+service ShortenerService {
+  rpc CreateShortenedURL(CreateShortenedUrlRequest) returns (CreateShortenedUrlResponse);
+  rpc ResolveShortenedURL(CreateShortenedUrlRequest) returns (CreateShortenedUrlResponse);
+}
+
+// Info needed to create a shortened URL
+message CreateShortenedUrlRequest {
+  string original_url = 1;
+}
+
+// Shortened URL response
+message CreateShortenedUrlResponse {
+  string shortened_url = 1;
+}
+
+// Request to resolve a shortened URL
+message ResolveShortenedUrlRequest {
+  // The shortened URL to resolve
+  string shortened_url = 1;
+}
+
+// Response containing the original URL
+message ResolveShortenedUrlResponse {
+  // The original URL corresponding to the shortened URL
+  string original_url = 1;
+}
