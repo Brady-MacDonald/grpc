@@ -15,7 +15,7 @@ message HelloRequest {
 // HelloResponse message
 // Created in .proto file
 message HelloResponse {  
-  // First
+  // Server response message
   string message = 1;  
 }  
  
