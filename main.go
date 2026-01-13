@@ -27,6 +27,10 @@ func main() {
 	s := grpc.NewServer()
 	hello_proto.RegisterHelloServiceServer(s, &helloServer{})
 
+	x := hello_proto.HelloRequest{
+		Name: "okay",
+	}
+
 	log.Println("Server listening on :50051")
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("Failed to serve: %v", err)

@@ -28,12 +28,13 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 ```
 
 ```bash
-protoc 
-    --go_out=. /
-    --go_opt=module=github.com/your-username/grpc-demo \  # Your module path  
-    --go-grpc_out=. \      
-    --go-grpc_opt=module=github.com/your-username/grpc-demo \  # Your module path  
-    proto/hello/hello.proto
+protoc \ 
+  --go_out=. \ 
+  --go_opt=module=github.com/Brady-MacDonald/grpc \ 
+  --go-grpc_out=. \ 
+  --go-grpc_opt=module=github.com/Brady-MacDonald/grpc \ 
+  proto/hello/hello.proto
+
 ```
 
 `--go_out` for pure proto buf code generation

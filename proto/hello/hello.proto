@@ -5,12 +5,17 @@ package hello; // Protobuf package name (distinct from Go package)
 // Correct go_package format for Go modules  
 option go_package = "github.com/Brady-MacDonald/grpc/proto/hello;hello_proto";  
  
-// Example message and service  
+// HelloRequest message
+// Created in .proto file
+// Then compiled into go code
 message HelloRequest {  
   string name = 1;  
 }  
  
+// HelloResponse message
+// Created in .proto file
 message HelloResponse {  
+  // First
   string message = 1;  
 }  
  

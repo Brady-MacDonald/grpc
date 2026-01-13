@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package hello; // Protobuf package name (distinct from Go package)  
+ 
+// Correct go_package format for Go modules  
+option go_package = "github.com/Brady-MacDonald/proto/proto/hello;hello_proto";
+
+// Define our schema
+// Models and types
+
+message Employee {
+  int32 id = 1; // Position of the id property
+  string name = 2;
+  float salary = 3;
+}
+
+message Employees {
+  repeated Employee employees = 1;
+}
